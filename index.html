@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scopelab Healthcare Ltd - Laboratory, Dental, Theatre &amp; Dialysis Equipment | Nairobi, Kenya</title>
+<meta name="description" content="Scopelab Healthcare Ltd supplies laboratory, dental, theatre and dialysis equipment to hospitals, clinics and labs across Kenya. Nairobi &amp; Eldoret. Committed to comprehensive healthcare solutions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --red:#E23129;
+    --red-deep:#B71F1E;
+    --blue:#019CD4;
+    --navy:#0F2A3D;
+    --navy-2:#153B54;
+    --ink:#101820;
+    --paper:#FBFAF6;
+    --ice:#EEF4F8;
+    --ice-2:#E3EEF4;
+    --line: rgba(15,42,61,0.12);
+    --muted:#5B6B76;
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Inter", sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:"Space Grotesk", sans-serif; margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--red-deep);
+  }
+  .eyebrow::before{
+    content:""; width:18px; height:2px; background:var(--red); display:inline-block; border-radius:2px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 24px; border-radius:999px; font-weight:700; font-size:0.95rem;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{ background:var(--red); color:#fff; box-shadow:0 10px 24px -8px rgba(226,49,41,0.55);}
+  .btn-primary:hover{background:var(--red-deep);}
+  .btn-ghost{ background:transparent; border-color:var(--line); color:var(--navy);}
+  .btn-ghost:hover{background:#fff; border-color:var(--navy);}
+  .btn-light{ background:#fff; color:var(--navy);}
+
+  /* ---------- NAV ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,250,246,0.86);
+    backdrop-filter: blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 0;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand img{ height:40px; width:auto; }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.05; }
+  .brand-text b{ font-family:"Space Grotesk", sans-serif; font-size:1.05rem; color:var(--navy); }
+  .brand-text span{ font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); }
+  .nav-links{ display:flex; align-items:center; gap:30px; }
+  .nav-links a{ text-decoration:none; color:var(--navy-2); font-weight:600; font-size:0.92rem; }
+  .nav-links a:hover{ color:var(--red); }
+  .nav-cta{ display:flex; align-items:center; gap:14px; }
+  .nav-tel{ display:flex; flex-direction:column; text-align:right; font-size:0.78rem; color:var(--muted); }
+  .nav-tel b{ color:var(--navy); font-size:0.92rem; }
+  .menu-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{ position:relative; overflow:hidden; padding:64px 0 0; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.05fr 0.95fr; gap:56px; align-items:center;
+    padding-bottom:70px;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4vw, 3.55rem); line-height:1.06; margin:16px 0 20px; color:var(--navy);
+    max-width:640px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--red); }
+  .hero .lead{ font-size:1.08rem; line-height:1.7; color:var(--muted); max-width:520px; margin-bottom:30px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px; }
+  .hero-meta{ display:flex; gap:26px; flex-wrap:wrap; }
+  .hero-meta div{ font-size:0.85rem; color:var(--muted); }
+  .hero-meta b{ display:block; font-family:"Space Grotesk", sans-serif; font-size:1.3rem; color:var(--navy); }
+
+  .hero-visual{ position:relative; }
+  .hero-ring{
+    position:relative; border-radius:28px; overflow:hidden;
+    box-shadow: 0 30px 70px -24px rgba(15,42,61,0.45);
+    border:1px solid var(--line);
+  }
+  .hero-ring img{ width:100%; height:460px; object-fit:cover; display:block; }
+  .hero-badge{
+    position:absolute; left:-26px; bottom:-26px;
+    width:132px; height:132px; border-radius:50%;
+    background:#fff; border:6px solid var(--ice);
+    box-shadow:0 18px 40px -14px rgba(15,42,61,0.4);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;
+    padding:10px;
+  }
+  .hero-badge b{ font-family:"Space Grotesk", sans-serif; font-size:1.5rem; color:var(--red); line-height:1; }
+  .hero-badge span{ font-size:0.62rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--navy); margin-top:4px; }
+
+  .arc-divider{ display:block; width:100%; height:auto; margin-top:-2px; }
+
+  /* ---------- STRIP ---------- */
+  .stats-strip{ background:var(--navy); }
+  .stats-inner{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    padding:38px 0;
+  }
+  .stat{ text-align:center; padding:0 18px; border-left:1px solid rgba(255,255,255,0.12); }
+  .stat:first-child{ border-left:none; }
+  .stat b{ display:block; font-family:"Space Grotesk", sans-serif; font-size:2.1rem; color:#fff; }
+  .stat span{ font-size:0.8rem; color:rgba(255,255,255,0.65); letter-spacing:0.03em; }
+
+  /* ---------- ABOUT ---------- */
+  .about{ padding:88px 0; }
+  .about-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap:64px; align-items:center; }
+  .about-photo{ position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--line); box-shadow:0 24px 50px -30px rgba(15,42,61,0.5);}
+  .about-photo img{ width:100%; height:420px; object-fit:cover; }
+  .about h2{ font-size:clamp(1.7rem,2.6vw,2.3rem); color:var(--navy); margin:14px 0 20px; max-width:480px; }
+  .about p{ color:var(--muted); line-height:1.8; margin-bottom:16px; font-size:1rem; max-width:520px;}
+  .about-points{ list-style:none; padding:0; margin:26px 0 0; display:grid; gap:14px; }
+  .about-points li{ display:flex; gap:12px; align-items:flex-start; font-size:0.95rem; color:var(--navy-2); }
+  .about-points svg{ flex:none; margin-top:2px; }
+
+  /* ---------- EQUIPMENT ---------- */
+  .equipment{ padding:20px 0 90px; background:var(--ice); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .section-head{ max-width:640px; margin:0 auto 48px; text-align:center; padding-top:80px;}
+  .section-head h2{ font-size:clamp(1.8rem,2.8vw,2.4rem); color:var(--navy); margin:14px 0 12px; }
+  .section-head p{ color:var(--muted); font-size:1rem; line-height:1.7; }
+  .equip-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .equip-card{
+    background:#fff; border-radius:20px; padding:30px 26px; border:1px solid var(--line);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .equip-card:hover{ transform:translateY(-6px); box-shadow:0 26px 46px -26px rgba(15,42,61,0.35); }
+  .equip-icon{
+    width:56px; height:56px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%); margin-bottom:20px;
+  }
+  .equip-card:nth-child(even) .equip-icon{ background:linear-gradient(135deg, var(--blue) 0%, #027aa8 100%); }
+  .equip-card h3{ font-size:1.15rem; color:var(--navy); margin-bottom:10px; }
+  .equip-card p{ color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:16px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{ font-size:0.72rem; padding:5px 10px; border-radius:999px; background:var(--ice-2); color:var(--navy-2); font-weight:600; }
+
+  /* ---------- GALLERY ---------- */
+  .facility{ padding:90px 0; }
+  .gallery-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr; grid-auto-rows:190px; gap:18px; margin-top:20px;
+  }
+  .gallery-grid .g1{ grid-row: span 2; }
+  .gallery-item{ position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform 400ms ease; }
+  .gallery-item:hover img{ transform:scale(1.05); }
+  .gallery-cap{
+    position:absolute; left:0; right:0; bottom:0; padding:16px 18px;
+    background:linear-gradient(180deg, rgba(15,42,61,0) 0%, rgba(15,42,61,0.78) 100%);
+    color:#fff; font-size:0.85rem; font-weight:600;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--navy); color:#fff; padding:90px 0 70px; position:relative; overflow:hidden; }
+  .contact .section-head{ padding-top:0; }
+  .contact .section-head h2{ color:#fff; }
+  .contact .section-head p{ color:rgba(255,255,255,0.65); }
+  .contact .eyebrow{ color:#ff9d98; }
+  .contact .eyebrow::before{ background:#ff9d98; }
+  .contact-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:26px; align-items:start; }
+  .locations{ display:grid; gap:18px; }
+  .loc-card{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.14); border-radius:20px; padding:26px;
+  }
+  .loc-card h3{ font-size:1.15rem; margin-bottom:6px; display:flex; align-items:center; gap:10px;}
+  .loc-tag{ font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; background:var(--red); padding:3px 10px; border-radius:999px; font-weight:700; }
+  .loc-card address{ font-style:normal; color:rgba(255,255,255,0.72); line-height:1.7; margin:14px 0 18px; font-size:0.9rem; }
+  .loc-line{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:0.92rem; color:rgba(255,255,255,0.85); }
+  .loc-line svg{ flex:none; margin-top:2px; }
+  .loc-line a{ text-decoration:none; color:#fff; font-weight:700; }
+  .loc-line a:hover{ color:#ff9d98; }
+
+  /* ---- FORM ---- */
+  .form-card{
+    background:#fff; border-radius:22px; padding:34px;
+    box-shadow:0 30px 60px -28px rgba(0,0,0,0.55);
+  }
+  .form-card h3{ color:var(--navy); font-size:1.25rem; margin-bottom:6px; }
+  .form-card > p.form-intro{ color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:22px; }
+  .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .field{ margin-bottom:16px; display:flex; flex-direction:column; }
+  .field label{
+    font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--navy-2); margin-bottom:7px;
+  }
+  .field label .req{ color:var(--red); }
+  .field input, .field select, .field textarea{
+    font-family:"Inter", sans-serif; font-size:0.95rem; color:var(--ink);
+    padding:12px 14px; border-radius:11px; border:1.5px solid var(--line);
+    background:var(--paper); width:100%;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+  .field textarea{ resize:vertical; min-height:110px; }
+  .field select{ appearance:none; background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235B6B76' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:38px; }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(1,156,212,0.16); background:#fff;
+  }
+  .field.invalid input, .field.invalid select, .field.invalid textarea{ border-color:var(--red); }
+  .field .err{ font-size:0.78rem; color:var(--red); margin-top:6px; display:none; font-weight:600; }
+  .field.invalid .err{ display:block; }
+  .form-actions{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:8px; }
+  .btn-wa{ background:#25D366; color:#0a2e17; }
+  .btn-wa:hover{ background:#1eb85a; }
+  .btn[disabled]{ opacity:0.6; pointer-events:none; }
+  .form-note{ font-size:0.78rem; color:var(--muted); margin-top:16px; line-height:1.6; }
+  .form-status{
+    display:none; margin-top:18px; padding:14px 16px; border-radius:12px;
+    font-size:0.9rem; font-weight:600; line-height:1.5;
+  }
+  .form-status.show{ display:block; }
+  .form-status.ok{ background:#E7F6EC; color:#14682F; border:1px solid #B7E3C4; }
+  .form-status.bad{ background:#FDECEB; color:#A5201A; border:1px solid #F6C3C0; }
+  .hp-field{ position:absolute; left:-9999px; opacity:0; height:0; overflow:hidden; }
+
+  .contact-cta{ margin-top:44px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    border-top:1px solid rgba(255,255,255,0.14); padding-top:34px; }
+  .contact-cta p{ color:rgba(255,255,255,0.7); max-width:420px; font-size:0.95rem; line-height:1.6; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:#0B2131; color:rgba(255,255,255,0.6); padding:36px 0; }
+  .footer-inner{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+  .footer-brand img{ height:26px; }
+  .footer-brand b{ color:#fff; font-family:"Space Grotesk",sans-serif; }
+  footer .fine{ font-size:0.8rem; }
+  footer .fine a{ text-decoration:none; color:rgba(255,255,255,0.75); }
+
+  @media (max-width: 980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; }
+    .about-grid{ grid-template-columns:1fr; }
+    .equip-grid{ grid-template-columns:repeat(2,1fr); }
+    .stats-inner{ grid-template-columns:repeat(2,1fr); gap:24px 0; }
+    .stat{ border-left:none; border-top:1px solid rgba(255,255,255,0.12); padding-top:18px; }
+    .stat:nth-child(1), .stat:nth-child(2){ border-top:none; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; grid-auto-rows:150px; }
+    .nav-links{ gap:16px; }
+    .nav-links a{ font-size:0.82rem; }
+    .brand-text span{ display:none; }
+  }
+  @media (max-width: 720px){
+    .topbar-inner{ flex-wrap:wrap; row-gap:10px; padding:10px 0; }
+    .nav-links{ order:3; width:100%; justify-content:space-between; gap:8px; }
+    .nav-tel{ display:none; }
+    .btn.btn-primary{ padding:10px 18px; font-size:0.85rem; }
+  }
+  @media (max-width: 640px){
+    .wrap{ padding:0 18px; }
+    .equip-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr; }
+    .gallery-grid .g1{ grid-row:auto; }
+    .field-row{ grid-template-columns:1fr; gap:0; }
+    .form-card{ padding:24px 20px; }
+    .form-actions .btn{ width:100%; }
+    .hero{ padding-top:26px; }
+    .hero-badge{ width:104px; height:104px; left:-14px; bottom:-14px; }
+    .hero-badge b{ font-size:1.15rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <img src="assets/logo_nav.png" alt="Scopelab Healthcare Ltd logo" />
+      <span class="brand-text"><b>Scopelab Healthcare</b><span>Comprehensive Healthcare Solutions</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#facility">Facility</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="nav-tel">
+        <span>Call Nairobi</span>
+        <b>0757 080 999</b>
+      </div>
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Nairobi &amp; Eldoret · Est. 2016</p>
+        <h1>Equipping Kenya's hospitals and labs with <em>precision</em> you can rely on.</h1>
+        <p class="lead">Scopelab Healthcare Ltd supplies laboratory, dental, theatre and dialysis equipment to hospitals, clinics and laboratories across the region — backed by reliable manufacturing partners and a team that understands healthcare procurement.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Request a quotation</a>
+          <a class="btn btn-ghost" href="#equipment">Browse equipment</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>4</b>Equipment divisions</div>
+          <div><b>2</b>Branch locations</div>
+          <div><b>8+</b>Years serving Kenya</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-ring">
+          <img src="assets/gallery_pillars_desk.jpg" alt="Scopelab Healthcare showroom reception in Nairobi" />
+        </div>
+        <div class="hero-badge">
+          <b>2016</b>
+          <span>Registered &amp; tax compliant</span>
+        </div>
+      </div>
+    </div>
+    <svg class="arc-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,40 C 320,90 1120,0 1440,46 L1440,90 Z" fill="#0F2A3D"></path>
+    </svg>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="wrap stats-inner">
+      <div class="stat"><b>Lab</b><span>Clinical chemistry, microscopes &amp; consumables</span></div>
+      <div class="stat"><b>Dental</b><span>Chairs, units &amp; instruments</span></div>
+      <div class="stat"><b>Theatre</b><span>Surgical lighting &amp; OR equipment</span></div>
+      <div class="stat"><b>Dialysis</b><span>Machines &amp; consumables</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="assets/gallery_wall_signage.jpg" alt="Scopelab Healthcare Ltd signage at the Nairobi office" />
+      </div>
+      <div>
+        <p class="eyebrow">About Scopelab</p>
+        <h2>Committed to comprehensive healthcare solutions since 2016.</h2>
+        <p>Scopelab Healthcare Ltd is one of Kenya's fastest-growing suppliers of medical, dental, theatre and laboratory equipment, built by a team of skilled and determined professionals dedicated to cost-effective, modern healthcare technology.</p>
+        <p>We're a duly registered private company, fully compliant with Kenya's tax regulatory bodies. Operating in isolation has limited room for success — so we partner with vibrant, reliable manufacturers and distributors both within and outside Kenya to keep our clients equipped, timely, and ahead.</p>
+        <ul class="about-points">
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#019CD4"/><path d="M6 10.2l2.6 2.6L14.4 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Registered, tax-compliant Kenyan company</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#E23129"/><path d="M6 10.2l2.6 2.6L14.4 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Trusted regional &amp; international manufacturing partners</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#019CD4"/><path d="M6 10.2l2.6 2.6L14.4 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Serving hospitals, clinics &amp; laboratories nationwide</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT -->
+  <section id="equipment" class="equipment">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What we supply</p>
+        <h2>Four divisions, one trusted supplier.</h2>
+        <p>From lab benches to operating theatres, we stock and source the equipment your facility depends on daily.</p>
+      </div>
+      <div class="equip-grid">
+
+        <article class="equip-card">
+          <div class="equip-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 20h6M12 20v-4M8 4l3 3M15 3l-4.5 4.5a4 4 0 105 5L20 8" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16.5" cy="7.5" r="1.4" fill="#fff"/></svg>
+          </div>
+          <h3>Laboratory Equipment</h3>
+          <p>Automated &amp; semi-automated analyzers, microscopes, calibrators and controls for accurate diagnostics.</p>
+          <div class="chip-row">
+            <span class="chip">Chemistry analyzers</span>
+            <span class="chip">Microscopes</span>
+            <span class="chip">Rapid test kits</span>
+            <span class="chip">Consumables</span>
+          </div>
+        </article>
+
+        <article class="equip-card">
+          <div class="equip-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3c-1.7 0-3 1.3-3 3 0 2 1 3 1 5 0 4 2.5 6 4 6h6c1.5 0 4-2 4-6 0-2 1-3 1-5 0-1.7-1.3-3-3-3-1.2 0-2 .6-2.5 1.3C14 3.5 13 3 12 3s-2 .5-2.5 1.3C9 3.6 8.2 3 7 3z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Dental Equipment</h3>
+          <p>Dental chairs, units and instruments engineered for patient comfort and clinical precision.</p>
+          <div class="chip-row">
+            <span class="chip">Dental chairs</span>
+            <span class="chip">Handpieces</span>
+            <span class="chip">Sterilization</span>
+          </div>
+        </article>
+
+        <article class="equip-card">
+          <div class="equip-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="6" r="4.2" stroke="#fff" stroke-width="1.6"/><path d="M6.5 6.6l-2.3-.6M17.5 6.6l2.3-.6M9 3.3L8.3 1M15 3.3l.7-2.3" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/><rect x="9.3" y="12.5" width="5.4" height="9" rx="1.5" stroke="#fff" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Theatre Equipment</h3>
+          <p>Surgical lighting, tables and operating room systems built for demanding clinical environments.</p>
+          <div class="chip-row">
+            <span class="chip">OR lighting</span>
+            <span class="chip">Surgical tables</span>
+            <span class="chip">Monitors</span>
+          </div>
+        </article>
+
+        <article class="equip-card">
+          <div class="equip-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 6.5 6 11a6 6 0 11-12 0c0-4.5 6-11 6-11z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Dialysis Equipment</h3>
+          <p>Reliable dialysis machines and consumables to support renal care programs.</p>
+          <div class="chip-row">
+            <span class="chip">Dialysis machines</span>
+            <span class="chip">Consumables</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITY GALLERY -->
+  <section id="facility" class="facility">
+    <div class="wrap">
+      <div class="section-head" style="padding-top:0;">
+        <p class="eyebrow">Inside Scopelab</p>
+        <h2>Our Nairobi showroom &amp; offices.</h2>
+        <p>Textile House on River Road houses our laboratory, dental, theatre and dialysis equipment displays, reception and marketing teams.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item g1">
+          <img src="assets/gallery_showroom_wide.jpg" alt="Scopelab showroom floor with dialysis, dental, theatre and laboratory equipment sections" />
+          <div class="gallery-cap">Showroom floor — Laboratory, Dental, Theatre &amp; Dialysis sections</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery_desk_close.jpg" alt="Scopelab Healthcare reception desk" />
+          <div class="gallery-cap">Reception desk</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery_reception_shelf.jpg" alt="Scopelab reception display of medical consumables" />
+          <div class="gallery-cap">Consumables &amp; equipment on display</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Two branches, ready to equip you.</h2>
+        <p>Reach out for quotations, partnerships or product availability — our Nairobi and Eldoret teams are ready to help.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- ENQUIRY FORM -->
+        <div class="form-card">
+          <h3>Request a quotation</h3>
+          <p class="form-intro">Tell us what your facility needs and we'll come back with pricing and availability within one business day.</p>
+
+          <form id="enquiry-form" novalidate>
+            <!-- Replace the access key below with your own from web3forms.com (free) -->
+            <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY" />
+            <input type="hidden" name="subject" value="New equipment enquiry — scopelab.co.ke" />
+            <input type="hidden" name="from_name" value="Scopelab Website" />
+            <div class="hp-field"><label>Leave this empty</label><input type="text" name="botcheck" tabindex="-1" autocomplete="off" /></div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Full name <span class="req">*</span></label>
+                <input type="text" id="f-name" name="name" autocomplete="name" required />
+                <span class="err">Please enter your name.</span>
+              </div>
+              <div class="field">
+                <label for="f-org">Facility / organisation</label>
+                <input type="text" id="f-org" name="organisation" autocomplete="organization" placeholder="Hospital, clinic or lab" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">Email <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required />
+                <span class="err">Please enter a valid email address.</span>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone <span class="req">*</span></label>
+                <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="07XX XXX XXX" required />
+                <span class="err">Please enter your phone number.</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-interest">What do you need?</label>
+              <select id="f-interest" name="interest">
+                <option value="Laboratory Equipment">Laboratory equipment</option>
+                <option value="Dental Equipment">Dental equipment</option>
+                <option value="Theatre Equipment">Theatre equipment</option>
+                <option value="Dialysis Equipment">Dialysis equipment</option>
+                <option value="Consumables">Consumables &amp; reagents</option>
+                <option value="Servicing / Support">Servicing &amp; support</option>
+                <option value="Partnership">Partnership enquiry</option>
+                <option value="Other">Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="f-message">Message <span class="req">*</span></label>
+              <textarea id="f-message" name="message" placeholder="List the items, quantities or model numbers you're after." required></textarea>
+              <span class="err">Please tell us what you need.</span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submit-btn">Send enquiry</button>
+              <a class="btn btn-wa" href="https://wa.me/254757080999?text=Hello%20Scopelab%2C%20I%27d%20like%20a%20quotation%20for%3A%20" target="_blank" rel="noopener">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2A10 10 0 002.5 16.2L2 22l5.9-1.5A10 10 0 1012 2z"/></svg>
+                WhatsApp us
+              </a>
+            </div>
+
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            <p class="form-note">Prefer email? Write to <a href="mailto:info@scopelab.co.ke" style="color:var(--navy); font-weight:700;">info@scopelab.co.ke</a>. We never share your details.</p>
+          </form>
+        </div>
+
+        <!-- LOCATIONS -->
+        <div class="locations">
+        <div class="loc-card">
+          <h3>Nairobi <span class="loc-tag">Head Office</span></h3>
+          <address>
+            Textile House, 2nd Floor, River Road, Nairobi<br />
+            Next to KCB Bank River Road branch, directly opposite Guardian Courier
+          </address>
+          <div class="loc-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1.1.9-2 2-2h2.1c.5 0 1 .3 1.1.8l1 3a1.2 1.2 0 01-.4 1.3l-1.5 1.2a12 12 0 006 6l1.2-1.5a1.2 1.2 0 011.3-.4l3 1c.5.2.8.6.8 1.1V18c0 1.1-.9 2-2 2h-1C9.6 20 4 14.4 4 6V5z" stroke="#ff9d98" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <a href="tel:+254757080999">0757 080 999</a>
+          </div>
+          <div class="loc-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ff9d98" stroke-width="1.6"/><path d="M3 6.5l9 6 9-6" stroke="#ff9d98" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="mailto:info@scopelab.co.ke">info@scopelab.co.ke</a>
+          </div>
+        </div>
+        <div class="loc-card">
+          <h3>Eldoret <span class="loc-tag">Branch</span></h3>
+          <address>
+            Serving Rift Valley hospitals, clinics &amp; laboratories.
+          </address>
+          <div class="loc-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1.1.9-2 2-2h2.1c.5 0 1 .3 1.1.8l1 3a1.2 1.2 0 01-.4 1.3l-1.5 1.2a12 12 0 006 6l1.2-1.5a1.2 1.2 0 011.3-.4l3 1c.5.2.8.6.8 1.1V18c0 1.1-.9 2-2 2h-1C9.6 20 4 14.4 4 6V5z" stroke="#ff9d98" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <a href="tel:+254707603559">0707 603 559</a>
+          </div>
+          <div class="loc-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#ff9d98" stroke-width="1.6"/><path d="M3 6.5l9 6 9-6" stroke="#ff9d98" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="mailto:info@scopelab.co.ke">info@scopelab.co.ke</a>
+          </div>
+        </div>
+        </div>
+
+      </div>
+      <div class="contact-cta">
+        <p>P.O. Box 6463-00200, Nairobi, Kenya. We respond to quotation requests within one business day.</p>
+        <a class="btn btn-light" href="mailto:info@scopelab.co.ke?subject=Equipment%20Enquiry">Email us directly</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo_nav.png" alt="Scopelab Healthcare Ltd" />
+      <b>Scopelab Healthcare Ltd</b>
+    </div>
+    <div class="fine">Committed to Comprehensive Healthcare Solutions · P.O. Box 6463-00200, Nairobi</div>
+    <div class="fine">&copy; 2026 Scopelab Healthcare Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('enquiry-form');
+  if (!form) return;
+  var statusEl = document.getElementById('form-status');
+  var btn = document.getElementById('submit-btn');
+  var ENDPOINT = 'https://api.web3forms.com/submit';
+
+  function fieldOf(input) { return input.closest('.field'); }
+
+  function validate(input) {
+    var ok = true;
+    var v = (input.value || '').trim();
+    if (input.hasAttribute('required') && !v) ok = false;
+    if (ok && input.type === 'email' && v) ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if (ok && input.type === 'tel' && v) ok = v.replace(/[^0-9]/g, '').length >= 9;
+    fieldOf(input).classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  var inputs = form.querySelectorAll('input[required], textarea[required]');
+  Array.prototype.forEach.call(inputs, function (input) {
+    input.addEventListener('blur', function () { validate(input); });
+    input.addEventListener('input', function () {
+      if (fieldOf(input).classList.contains('invalid')) validate(input);
+    });
+  });
+
+  function setStatus(type, msg) {
+    statusEl.className = 'form-status show ' + type;
+    statusEl.textContent = msg;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var valid = true;
+    Array.prototype.forEach.call(inputs, function (input) {
+      if (!validate(input)) valid = false;
+    });
+    if (!valid) {
+      setStatus('bad', 'Please fill in the highlighted fields and try again.');
+      var firstBad = form.querySelector('.field.invalid input, .field.invalid textarea');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var key = form.querySelector('input[name="access_key"]').value;
+    if (!key || key.indexOf('YOUR-') === 0) {
+      setStatus('bad', 'This form is not connected yet. Please call 0757 080 999 or email info@scopelab.co.ke.');
+      return;
+    }
+
+    var original = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.setAttribute('disabled', 'disabled');
+    statusEl.className = 'form-status';
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.reset();
+          setStatus('ok', 'Thank you — your enquiry has been sent. Our team will respond within one business day.');
+        } else {
+          setStatus('bad', 'Something went wrong sending your message. Please call 0757 080 999 or email info@scopelab.co.ke.');
+        }
+      })
+      .catch(function () {
+        setStatus('bad', 'Network error. Please check your connection, or call 0757 080 999.');
+      })
+      .then(function () {
+        btn.textContent = original;
+        btn.removeAttribute('disabled');
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
