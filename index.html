@@ -355,6 +355,12 @@
   .contact-grid{grid-template-columns:1fr 1fr;gap:34px;}
   .loc-card{border-radius:5px;background:rgba(255,255,255,.07);}
   .loc-tag{border-radius:3px;background:var(--red);}
+  .office-map{overflow:hidden;border:1px solid rgba(255,255,255,.2);border-radius:5px;background:#dfeaf0;box-shadow:0 10px 24px rgba(0,0,0,.16);}
+  .office-map-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;background:#fff;color:var(--navy);}
+  .office-map-head strong{font-size:.9rem;}
+  .office-map-head a{color:var(--red);font-size:.76rem;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .office-map-head a:hover{text-decoration:underline;}
+  .office-map iframe{display:block;width:100%;height:340px;border:0;}
   .form-card{border-radius:5px;padding:30px;}
   .field input,.field select,.field textarea{border-radius:4px;background:#f8fbfd;}
   footer{background:#071c2d;padding:30px 0;}
@@ -700,6 +706,13 @@
 
         <!-- LOCATIONS -->
         <div class="locations">
+        <div class="office-map" aria-label="Map showing Scopelab Healthcare head office on River Road, Nairobi">
+          <div class="office-map-head">
+            <strong>Find us in Nairobi</strong>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Textile+House+River+Road+Nairobi" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+          <iframe title="Scopelab Healthcare Nairobi location" src="https://www.google.com/maps?q=Textile+House,+River+Road,+Nairobi,+Kenya&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <div class="loc-card">
           <h3>Nairobi <span class="loc-tag">Head Office</span></h3>
           <address>
