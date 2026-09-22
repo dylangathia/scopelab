@@ -358,6 +358,20 @@
   .form-card{border-radius:5px;padding:30px;}
   .field input,.field select,.field textarea{border-radius:4px;background:#f8fbfd;}
   footer{background:#071c2d;padding:30px 0;}
+  .why-choose{padding:78px 0;background:#f4f9fc;border-top:1px solid var(--line);}
+  .why-choose .section-head{padding-top:0;margin-bottom:36px;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .why-card{padding:26px 22px;background:#fff;border:1px solid var(--line);border-radius:5px;box-shadow:0 5px 18px rgba(11,39,64,.05);}
+  .why-icon{display:grid;place-items:center;width:42px;height:42px;margin-bottom:17px;border-radius:50%;background:#e5f4fb;color:var(--red);}
+  .why-card:nth-child(2) .why-icon{background:#e8f7ee;color:#159447;}
+  .why-card:nth-child(3) .why-icon{background:#fff1e4;color:#d87918;}
+  .why-card:nth-child(4) .why-icon{background:#eeeafd;color:#6652bd;}
+  .why-card:nth-child(5) .why-icon{background:#e5f4fb;color:var(--red);}
+  .why-card:nth-child(6) .why-icon{background:#e8f7ee;color:#159447;}
+  .why-card h3{margin:0 0 8px;color:var(--navy);font-size:1.02rem;}
+  .why-card p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.65;}
+  @media (max-width:760px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.why-grid{grid-template-columns:1fr}.why-choose{padding:62px 0}}
   @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:38px}.hero-visual{order:-1}.equip-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.hero-ring img{height:360px}}
   @media (max-width:640px){.wrap{padding:0 18px}.hero-grid{padding:46px 0 62px}.hero-badge{right:-10px;bottom:-10px}.equip-grid{grid-template-columns:1fr}.nav-links{gap:12px}.nav-links a{font-size:.78rem}.about-photo img{height:280px}}
   .contact-float{position:fixed;left:22px;bottom:22px;z-index:80;font-family:"Inter",sans-serif;}
@@ -556,6 +570,49 @@
           <img src="assets/gallery_reception_shelf.jpg" alt="Scopelab reception display of medical consumables" />
           <div class="gallery-cap">Consumables &amp; equipment on display</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose" aria-labelledby="why-choose-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why Scopelab</p>
+        <h2 id="why-choose-title">A dependable partner for better healthcare delivery.</h2>
+        <p>From your first enquiry to installation and after-sales support, we help you source the right equipment with confidence.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-3 8.2-7 10-4-1.8-7-5.6-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 12l2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Trusted quality</h3>
+          <p>We source reliable laboratory, dental, theatre and dialysis equipment from established manufacturing partners.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 7h11v10H4zM15 10h3l2 2v5h-5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="8" cy="18" r="1.8" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="18" r="1.8" stroke="currentColor" stroke-width="1.7"/></svg></div>
+          <h3>Regional reach</h3>
+          <p>With Nairobi and Eldoret coverage, we support hospitals, clinics and laboratories across Kenya.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2M20 12a8 8 0 11-16 0 8 8 0 0116 0z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Fast quotation support</h3>
+          <p>Tell us what you need and our team will help with availability, specifications and clear pricing.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M5 5h14v14H5zM8 9h8M8 13h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 19v2h6v-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Procurement expertise</h3>
+          <p>We understand healthcare procurement and help you make practical, cost-conscious equipment decisions.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>One trusted supplier</h3>
+          <p>Source multiple equipment divisions through one accountable partner, from diagnostics to theatre systems.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M20 11.5a7.5 7.5 0 01-11.3 6.5L4 19l1.1-4.2A7.5 7.5 0 1120 11.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+          <h3>People who respond</h3>
+          <p>Reach us by phone, email or WhatsApp and get direct support from a team ready to move your project forward.</p>
+        </article>
       </div>
     </div>
   </section>
