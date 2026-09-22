@@ -360,6 +360,21 @@
   footer{background:#071c2d;padding:30px 0;}
   @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:38px}.hero-visual{order:-1}.equip-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}.hero-ring img{height:360px}}
   @media (max-width:640px){.wrap{padding:0 18px}.hero-grid{padding:46px 0 62px}.hero-badge{right:-10px;bottom:-10px}.equip-grid{grid-template-columns:1fr}.nav-links{gap:12px}.nav-links a{font-size:.78rem}.about-photo img{height:280px}}
+  .contact-float{position:fixed;left:22px;bottom:22px;z-index:80;font-family:"Inter",sans-serif;}
+  .contact-float-panel{width:226px;margin-bottom:12px;padding:10px;background:#fff;border:1px solid #dce9f1;border-radius:7px;box-shadow:0 16px 40px rgba(11,39,64,.2);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity 160ms ease,transform 160ms ease,visibility 160ms ease;}
+  .contact-float.is-open .contact-float-panel{opacity:1;visibility:visible;transform:translateY(0);}
+  .contact-float-title{padding:7px 10px 9px;color:#0b2740;font-size:.76rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;}
+  .contact-float-link{display:flex;align-items:center;gap:11px;padding:10px;border-radius:4px;color:#24445e;text-decoration:none;font-size:.84rem;font-weight:600;}
+  .contact-float-link:hover{background:#f0f8fc;color:#0876c9;}
+  .contact-float-icon{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:#e8f4fb;color:#0876c9;font-size:.76rem;font-weight:800;flex:none;}
+  .contact-float-link.whatsapp .contact-float-icon{background:#e5f8ed;color:#159447;}
+  .contact-float-button{display:flex;align-items:center;gap:9px;padding:13px 17px;border:0;border-radius:5px;background:#0876c9;color:#fff;font:700 .84rem "Inter",sans-serif;box-shadow:0 9px 24px rgba(11,39,64,.22);cursor:pointer;}
+  .contact-float-button:hover{background:#075b9c;}
+  .contact-float-button svg{width:18px;height:18px;}
+  .contact-float-button .close-icon{display:none;}
+  .contact-float.is-open .contact-float-button .chat-icon{display:none;}
+  .contact-float.is-open .contact-float-button .close-icon{display:block;}
+  @media (max-width:640px){.contact-float{left:14px;bottom:14px}.contact-float-panel{width:214px}.contact-float-button{padding:12px 14px}}
 </style>
 </head>
 <body>
@@ -680,7 +695,60 @@
   </div>
 </footer>
 
+<div class="contact-float" id="contact-float">
+  <div class="contact-float-panel" id="contact-float-panel" aria-hidden="true">
+    <div class="contact-float-title">Connect with us</div>
+    <a class="contact-float-link" href="https://www.google.com/maps/search/?api=1&amp;query=Textile+House+River+Road+Nairobi" target="_blank" rel="noopener">
+      <span class="contact-float-icon" aria-hidden="true">M</span>Google Maps
+    </a>
+    <a class="contact-float-link" href="mailto:info@scopelab.co.ke">
+      <span class="contact-float-icon" aria-hidden="true">@</span>Email us
+    </a>
+    <a class="contact-float-link" href="sms:+254757080999">
+      <span class="contact-float-icon" aria-hidden="true">S</span>Send an SMS
+    </a>
+    <a class="contact-float-link whatsapp" href="https://wa.me/254757080999?text=Hello%20Scopelab%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">
+      <span class="contact-float-icon" aria-hidden="true">W</span>WhatsApp
+    </a>
+    <a class="contact-float-link" href="tel:+254757080999">
+      <span class="contact-float-icon" aria-hidden="true">P</span>Call 0757 080 999
+    </a>
+  </div>
+  <button class="contact-float-button" id="contact-float-button" type="button" aria-expanded="false" aria-controls="contact-float-panel">
+    <svg class="chat-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3h11A2.5 2.5 0 0120 5.5v7a2.5 2.5 0 01-2.5 2.5H11l-4.5 4v-4.1A2.5 2.5 0 014 12.5v-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <svg class="close-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Contact us</span>
+  </button>
+</div>
+
 <script>
+(function () {
+  var contactFloat = document.getElementById('contact-float');
+  var contactButton = document.getElementById('contact-float-button');
+  var contactPanel = document.getElementById('contact-float-panel');
+  if (!contactFloat || !contactButton || !contactPanel) return;
+
+  function closeContactMenu() {
+    contactFloat.classList.remove('is-open');
+    contactButton.setAttribute('aria-expanded', 'false');
+    contactPanel.setAttribute('aria-hidden', 'true');
+  }
+
+  contactButton.addEventListener('click', function () {
+    var isOpen = contactFloat.classList.toggle('is-open');
+    contactButton.setAttribute('aria-expanded', String(isOpen));
+    contactPanel.setAttribute('aria-hidden', String(!isOpen));
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!contactFloat.contains(event.target)) closeContactMenu();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeContactMenu();
+  });
+})();
+
 (function () {
   var form = document.getElementById('enquiry-form');
   if (!form) return;
